@@ -175,6 +175,18 @@ p {
   margin-top: 12px;
 }
 
+.post-header a {
+	color: #707070;
+}
+
+.post-header a:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff9494;
+  transition: 300ms background ease;
+}
+
+
 .post-after {
   padding-left: 40px;
   margin-bottom: 12px;
@@ -203,36 +215,28 @@ p {
   padding: 5px 8px 2px 8px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: 300ms background ease;
   display: inline-block;
   margin-bottom: 8px;
-  border-bottom: 3px solid #fa5305;
   font-family: 'Source Sans Pro', Helvetica, 'Helvetica Neue', sans-serif;
+  border-bottom: 3px solid #fff;
 }
 
 .tags a:hover {
-  color: #fff;
-  background-color: #fa5305;
-  border-bottom: 3px solid #fa5305;
   text-decoration: none;
+  border-bottom: 3px solid #ffc5c5;
 }
 
 .one-post a, p a {
-  border-bottom: 1px solid #fa5305;
+  border-bottom: 1px solid #ffc5c5;
   color: #505050;
   padding-bottom: 2px;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-  border-bottom: 3px solid #fa5305;
-}
-
 blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 20px;
-  border-left: 5px solid #fa5305;
+  border-left: 5px solid #ffc5c5;
   font-family: 'Source Sans Pro';
   font-size: 18px;
 }
