@@ -1,0 +1,9 @@
+title = "Vim Commands!"
+baseurl = "http://vimcommands.io"
+MetaDataFormat = "yaml"
+pluralizeListTitles = false
+theme = "command"
+
+[params]
+	Author = "Bradley Cicenas"
+  Email  = "bradley@vektor.nyc"

@@ -1,0 +1,25 @@
+{{ $baseurl := .Site.BaseURL }} 
+{{ partial "header.html" . }}  
+  {{ range .Data.Pages }}        
+      <article class="post">
+            
+        <header class="post-header">
+          <h1><a href="{{.RelPermalink }}">{{ .Title }}</a></h1>
+        </header>
+
+        <div class="post-after">
+            <div class="tags">
+              {{ range .Params.tags }}
+                  <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>              
+              {{ end }}
+            </div>
+        </div>
+      </article>
+  {{ end }}
+  </div>
+ </div>  
+</div>
+</div>
+</div>
+
+{{ partial "footer.html" }}
