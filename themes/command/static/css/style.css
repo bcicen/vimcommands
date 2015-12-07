@@ -81,9 +81,9 @@ footer {
 .content h1 {
   font-family: 'Source Sans Pro', serif;
   color: #3F3F3F;
-  font-size: 4.8em;
+  font-size: 3.8em;
   text-align: center; 
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 #logo {
@@ -107,7 +107,7 @@ footer {
 
 .container {  
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1800px;
   margin-top: 5%;
 }
 
@@ -135,11 +135,20 @@ footer {
   color: #777777;
 }
 
+.post-box {
+  margin: auto;
+/*	max-width: 400px;
+	overflow: hidden;
+  text-overflow: ellipsis; */
+	display: inline-block;
+  background: #fff;
+  border: 1px solid #d5d5d5;
+	margin: 5px;
+}
+
 .post {
   margin: auto;
-  padding-bottom: 20px;
-  background: #fff;
-  border-bottom: 1px solid #d5d5d5;
+	margin: 5px;
 }
 
 .post h2 {
@@ -155,9 +164,10 @@ p {
 
 .post .content {
   text-align: center;
-  margin-top: 3em;
+  margin-top: 1em;
+  margin-bottom: 2em;
   font-family: "Source Sans Pro", "Palatino Linotype", Georgia, serif;
-  font-size: 18px;
+  font-size: 2em;
 }
 
 .post .content li {
@@ -184,11 +194,11 @@ p {
   color: #fff;
   background-color: #ff9494;
   transition: 300ms background ease;
+	border-radius: 5px;
 }
 
 
 .post-after {
-  padding-left: 40px;
   margin-bottom: 12px;
 }
 
@@ -210,13 +220,11 @@ p {
 
 .tags a {
   color: #505050;
-  margin-right: 12px;
-  font-size: 0.6em;
+  font-size: 0.4em;
   padding: 5px 8px 2px 8px;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 8px;
   font-family: 'Source Sans Pro', Helvetica, 'Helvetica Neue', sans-serif;
   border-bottom: 3px solid #fff;
 }
