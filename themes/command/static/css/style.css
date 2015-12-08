@@ -1,4 +1,5 @@
-body {
+html,body {
+	height: 100%;
   font-size: 20px; 
 }
 
@@ -14,60 +15,20 @@ body {
 .navbar .nav {
   float: right; }
 
-figure.full img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;  
+.push {
+	height: 4em;
 }
 
-figure.medium
-{
-    width:400px;
-    margin-top:30px;
-    margin-bottom:30px;            
-    margin-left: auto;
-    margin-right: auto;    
-}
-
-figure.large
-{
-    width:500px;
-    margin-top:30px;
-    margin-bottom:30px;            
-    margin-left: auto;
-    margin-right: auto;    
-}
-
-figure.large img {
-    width:500px; 
-    height: auto;
-}
-
-figcaption
-{
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    background-color: #EFEFEF;    
-    font-size: 90%;        
-    margin-left: 1%;
-    padding-left: 4%;
-    padding-right: 4%;
-    text-align: justify;
-    display: block;
-}
-
-footer { 
- position: absolute;
+.footer { 
+ position: relative;
  bottom: 0;
- float: bottom;
- z-index: 10; 
  line-height: normal;
- margin-top: 10px; 
  font-size: 0.2em;
  text-transform: uppercase;
  font-family: 'Liberation Sans', Helvetica, sans-serif; 
- padding-top: 2em; 
  text-align: center;
  margin: auto;
+ height: 4em;
  width: 100%;
 }
 
@@ -107,9 +68,11 @@ footer {
 }
 
 .container {  
-  margin: 0 auto;
+  margin: 0 auto ;
   max-width: 1800px;
   margin-top: 5%;
+	min-height: 100%;
+	height: 100%;
 }
 
 .row-fluid .span12 ul .posts {
@@ -152,12 +115,6 @@ footer {
 	margin: 5px;
 }
 
-.post h2 {
-  font-size: 25px;
-  line-height: 50px;
-  margin: 25px 0;
-}
-
 p {
   line-height: 25px;
   margin: 0 0 20px;
@@ -169,15 +126,6 @@ p {
   margin-bottom: 2em;
   font-family: "Source Sans Pro", "Palatino Linotype", Georgia, serif;
   font-size: 2em;
-}
-
-.post .content li {
-  line-height: 150%;
-  list-style: square;
-}
-
-.post .content ol {
-  margin-bottom: 25px;
 }
 
 .post-header {
@@ -198,25 +146,8 @@ p {
 	border-radius: 5px;
 }
 
-
 .post-after {
   margin-bottom: 12px;
-}
-
-.post-after ul {
-  clearfix()
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.post-after ul li {
-  float: left;
-  margin-right: 20px;
-}
-
-.post-after ul li a {
-  display: block;
 }
 
 .tags a {
@@ -233,21 +164,6 @@ p {
 .tags a:hover {
   text-decoration: none;
   border-bottom: 3px solid #ffc5c5;
-}
-
-.one-post a, p a {
-  border-bottom: 1px solid #ffc5c5;
-  color: #505050;
-  padding-bottom: 2px;
-  text-decoration: none;
-}
-
-blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 20px;
-  border-left: 5px solid #ffc5c5;
-  font-family: 'Source Sans Pro';
-  font-size: 18px;
 }
 
 #pagination {
@@ -276,20 +192,4 @@ blockquote {
 .pagenumber {
 	font-size: 3em;
 	padding-left,padding-right: 10px;
-}
-
-
-pre code {
-  display: block;
-  font-size: 14px;
-}
-
-.code {
-  font-family: 'Liberation Mono', Monaco, Consolas;
-  display: block;
-}
-
-code, pre {
-    font-family: 'Liberation Mono', Monaco, Consolas;
-    font-size: 14px;
 }
