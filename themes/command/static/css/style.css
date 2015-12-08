@@ -68,8 +68,8 @@ html,body {
 }
 
 .container {  
-  margin: 0 auto ;
-  max-width: 1800px;
+  margin: 0 auto;
+  width: 90%;
   margin-top: 5%;
 	min-height: 100%;
 	height: 100%;
@@ -114,6 +114,10 @@ html,body {
   margin: auto;
 	margin: 5px;
 }
+.post hr {
+  margin: auto;
+	max-width: 400px;
+}
 
 p {
   line-height: 25px;
@@ -147,7 +151,7 @@ p {
 }
 
 .post-after {
-  margin-bottom: 12px;
+  margin-bottom: 60px;
 }
 
 .tags a {
