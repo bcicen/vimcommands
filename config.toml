@@ -3,6 +3,7 @@ baseurl = "http://vimcommands.com"
 MetaDataFormat = "yaml"
 pluralizeListTitles = false
 theme = "command"
+paginate = 30
 
 [params]
 	Author = "Bradley Cicenas"

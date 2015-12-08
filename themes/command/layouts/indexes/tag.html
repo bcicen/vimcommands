@@ -1,16 +1,26 @@
+{{ $baseurl := .Site.BaseURL }}
 {{ partial "header.html" . }}
     <!-- CONTENT -->
-  <div class="tag-list">
-      <p id="tag-name">
-      	<h1>Tag: {{ .Title }}</h1>
-      </p>
-        {{ range .Data.Pages }}
-        <div class="one-post">      
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <div class="post-time">{{ .Date.Format "January 2 2006" }}</div>
+	{{ range .Data.Pages.ByPublishDate }}
+      <article class="post-box">
+
+        <header class="post-header">
+          <h1><a href="{{.RelPermalink }}">{{ .Title }}</a></h1>
+        </header>
+
+        <div class="post-after">
+            <div class="tags">
+              {{ range .Params.tags }}
+                  <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>
+              {{ end }}
+            </div>
         </div>
-        <hr>
-        {{ end }}
-  </div>      
+      </article>
+  {{ end }}
+  </div>
+ </div>
+</div>
+</div>
+</div>
 
 {{ partial "footer.html" . }}

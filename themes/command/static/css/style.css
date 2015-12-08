@@ -58,6 +58,7 @@ figcaption
 footer { 
  position: absolute;
  bottom: 0;
+ float: bottom;
  z-index: 10; 
  line-height: normal;
  margin-top: 10px; 
@@ -101,7 +102,7 @@ footer {
   padding-right: 10px;
   background-color: white;
   margin: auto;
-  max-width: 980px;
+  max-width: 1600px;
   border-bottom: 1px solid #989898;
 }
 
@@ -249,29 +250,13 @@ blockquote {
   font-size: 18px;
 }
 
-.tag-list {
-  font-family: 'Source Sans Pro';
-  max-width: 700px;
-  margin: auto;
-}
-
-.tag-list h1 {
-  max-width: 300px;
-  margin: auto;
-  padding-bottom: 2em;
-}
-
-.one-post {
-  padding-bottom: 30px;
-}
-
 #pagination {
   margin-top: 1.5em;
 }
 
 #pagination a {
   margin-top: 20px;
-  padding: 7px 20px 3px 20px;
+  padding: 7px 10px 3px 10px;
   width: 115px;
   color: #646464;
   text-transform: uppercase;
