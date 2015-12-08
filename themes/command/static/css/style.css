@@ -183,7 +183,7 @@ p {
 .post-header {
   padding: 20px 40px 20px 40px;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .post-header a {
@@ -251,19 +251,19 @@ blockquote {
 }
 
 #pagination {
-  margin-top: 1.5em;
+  margin-top: 3em;
+	text-align: center;
 }
 
 #pagination a {
   margin-top: 20px;
-  padding: 7px 10px 3px 10px;
+  padding: 7px 5px 3px 5px;
   width: 115px;
   color: #646464;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 15px;
-  font-family: 'Liberation Sans', Helvetica, sans-serif;
-  border-bottom: 4px solid #646464;
+  font-family: 'Source Sans', Helvetica, sans-serif;
 }
 
 #pagination a:hover {
@@ -272,6 +272,12 @@ blockquote {
   border-bottom: 4px solid #646464;
   text-decoration: none;
 }
+
+.pagenumber {
+	font-size: 3em;
+	padding-left,padding-right: 10px;
+}
+
 
 pre code {
   display: block;

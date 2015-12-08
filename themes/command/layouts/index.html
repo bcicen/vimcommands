@@ -1,8 +1,8 @@
-{{ $baseurl := .Site.BaseURL }} 
+{{ $baseurl := .Site.BaseURL }}
 {{ partial "header.html" . }}  
-	{{ range .Data.Pages.ByPublishDate }}
+  {{ range .Paginator.Pages.ByPublishDate }}
       <article class="post-box">
-            
+
         <header class="post-header">
           <h1><a href="{{.RelPermalink }}">{{ .Title }}</a></h1>
         </header>
@@ -10,7 +10,7 @@
         <div class="post-after">
             <div class="tags">
               {{ range .Params.tags }}
-                  <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>              
+                  <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>
               {{ end }}
             </div>
         </div>
@@ -19,7 +19,7 @@
   </div>
  </div>  
 </div>
+ {{ partial "pagination.html" . }}
 </div>
 </div>
-
 {{ partial "footer.html" }}
