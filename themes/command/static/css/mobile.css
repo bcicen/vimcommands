@@ -1,24 +1,39 @@
 .footer { 
- height: 2em;
- font-size: 5px;
+	height: 2em;
+	font-size: 0.5em;
+	padding-top: 40px;
 }
 
 .command {
-  font-size: 2.0em;
+	font-size: 2.0em;
 	padding-bottom: 50px;
 }
 
 .posts h1 {
-  font-size: 1.8em;
-  margin-bottom: 5px;
+	font-size: 1.8em;
+	margin-bottom: 5px;
 }
 
 .post-box {
 	display: block;
 }
 
-#logo {
-  width: 180px;
+.logo {
+	width: 180px;
+	height: 48px;
+	display: inline-block;
+	margin: auto;
+	margin-left: 40px;
+	background-image: url("../images/logo-small.png");
+}
+
+.fa {
+	font-size: 1.2em;
+}
+
+.navlink {
+	width: 20px;
+	padding-right: 5px;
 }
 
 .posts {
@@ -26,13 +41,13 @@
 }
 
 .post {
-  font-size: 1em;
+	font-size: 1em;
 }
 
 .post-header {
-  padding: 5px 20px 5px 20px;
+	padding: 5px 20px 5px 20px;
 }
 
 .tags a {
-  font-size: 0.2em;
+	font-size: 0.8em;
 }
