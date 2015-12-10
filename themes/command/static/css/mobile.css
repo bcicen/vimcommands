@@ -1,9 +1,6 @@
-.container {
-  padding-top: 80px;
-}
-
 .footer { 
  height: 2em;
+ font-size: 5px;
 }
 
 .command {
@@ -11,17 +8,24 @@
 	padding-bottom: 50px;
 }
 
-.content h1 {
+.posts h1 {
   font-size: 1.8em;
   margin-bottom: 5px;
+}
+
+.post-box {
+	display: block;
 }
 
 #logo {
   width: 180px;
 }
 
+.posts {
+	padding-top: 20%;
+}
 
-.post .content {
+.post {
   font-size: 1em;
 }
 
@@ -29,4 +33,6 @@
   padding: 5px 20px 5px 20px;
 }
 
-.tags a { display: none; }
+.tags a {
+  font-size: 0.2em;
+}
