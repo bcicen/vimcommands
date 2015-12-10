@@ -27,7 +27,7 @@ float: right; }
 .command {
 	font-family: 'Source Sans Pro', serif;
 	color: #3F3F3F;
-	font-size: 8.0em;
+	font-size: 3.0em;
 	line-height: 0.8em;
 	text-align: center; 
 	padding-bottom: 100px;
@@ -83,8 +83,10 @@ float: right; }
 }
 
 .posts {
+	margin: auto;
 	text-align: center;
 	padding-top: 150px;
+	max-width: 70%;
 }
 
 .posts li {  
@@ -114,7 +116,7 @@ float: right; }
 }
 
 p {
-	line-height: 25px;
+	line-height: normal;
 	margin: 0 0 20px;
 }
 
@@ -124,7 +126,7 @@ p {
 	margin-top: 1em;
 	margin-bottom: 2em;
 	font-family: "Source Sans Pro", "Palatino Linotype", Georgia, serif;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .post hr {

@@ -5,8 +5,12 @@
 }
 
 .command {
-	font-size: 2.0em;
+	font-size: 1.5em;
 	padding-bottom: 50px;
+}
+
+.posts {
+	max-width: 90%;
 }
 
 .posts h1 {

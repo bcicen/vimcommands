@@ -1,0 +1,33 @@
+{{ $baseurl := .Site.BaseURL }}
+
+{{ partial "header.html" . }}
+    <div class="posts">
+      <!-- CONTENT -->
+      <div class="post">
+        <div class="command">|</div>
+        <div class="post-after">
+          <div class="tags">
+            {{ range .Params.tags }}
+            <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>              
+            {{ end }}
+          </div>
+        </div>
+        <hr>
+        <div class="post content">
+          {{ .Content }}
+        </div>
+        <!-- END CONTENT -->
+      </div>
+      <script>
+        $(function () {
+          var data = "{{ .Title }}"
+         typeIt('.command', data, 60, 1)
+        });
+      </script>
+    </div>
+  <div class="push"></div>
+</div>
+</div>
+{{ partial "footer.html" }}
+</div>
+</div>
