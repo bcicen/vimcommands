@@ -1,4 +1,4 @@
-title = "Vim Commands!"
+title = "VimCommands"
 baseurl = "http://vimcommands.com"
 MetaDataFormat = "yaml"
 pluralizeListTitles = false
@@ -6,5 +6,7 @@ theme = "command"
 paginate = 50
 
 [params]
+  Description = "Curated collection of essential Vim commands"
+  Keywords = "vim,commands,github,community"
 	Author = "Bradley Cicenas"
   Email  = "bradley@vektor.nyc"
