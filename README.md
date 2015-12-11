@@ -1,10 +1,12 @@
 # vimcommands
 
-Repo for vimcommands.com: a gallery of various categorized Vim commands!
+vimcommands.com: A gallery of various categorized Vim commands!
 
 # Contributing
 
-Any and all suggestions or pull requests are welcome. If you have a new command you'd like to add, add a YAML file to content/commands/ using the template below:
+Any and all suggestions or pull requests are welcome.
+
+If you have a new command you'd like to add, add a YAML file to content/commands/ using the template below:
 
 ```yaml
 ---
