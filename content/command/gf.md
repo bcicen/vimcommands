@@ -1,5 +1,6 @@
 ---
 Tags: ['buffers']
+Mode: 'normal'
 date: 2015-12-11T19:06:27-05:00
 title: gf
 ---
