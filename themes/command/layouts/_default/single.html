@@ -8,7 +8,11 @@
         <div class="post-after">
           <div class="tags">
             {{ range .Params.tags }}
-            <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>              
+            <a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+            <br>
+            {{ with .Params.mode }}
+            <a href="{{ $baseurl }}/mode/{{ . | urlize }}">{{ . }} mode</a>
             {{ end }}
           </div>
         </div>
