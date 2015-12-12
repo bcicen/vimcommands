@@ -3,7 +3,7 @@ baseurl = "http://vimcommands.com"
 MetaDataFormat = "yaml"
 pluralizeListTitles = false
 theme = "command"
-paginate = 50
+paginate = 100
 
 [params]
   Description = "Curated collection of essential Vim commands"

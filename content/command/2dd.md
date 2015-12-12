@@ -1,7 +1,7 @@
 ---
 Tags: ['delete']
 date: 2015-12-11T19:15:43-05:00
-title: 'dd '
+title: '2dd '
 ---
 
- Delete a line
+ Delete 2 lines

@@ -1,7 +1,7 @@
 ---
 Tags: ['yank']
-date: 2015-12-07T17:53:18-05:00
-title: yw
+date: 2015-12-11T19:15:43-05:00
+title: 'yw '
 ---
 
-Yank Word
+ yank word

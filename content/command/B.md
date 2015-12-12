@@ -1,7 +1,7 @@
 ---
 Tags: ['movement']
 date: 2015-12-11T19:15:43-05:00
-title: 'G '
+title: 'B '
 ---
 
- Go to the last line of the document
+ Jump backwards to the start of a word

@@ -1,7 +1,7 @@
 ---
 Tags: ['yank']
 date: 2015-12-11T19:15:43-05:00
-title: 'yy '
+title: '2yy '
 ---
 
- yank a line
+ Yank 2 lines
