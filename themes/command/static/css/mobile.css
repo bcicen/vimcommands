@@ -23,12 +23,11 @@
 }
 
 .logo {
-	width: 180px;
-	height: 48px;
-	display: inline-block;
+	width: 227px;
+	height: 61px;
+	background-size: 227px 61px;
 	margin: auto;
 	margin-left: 40px;
-	background-image: url("../images/logo-small.png");
 }
 
 .fa {
