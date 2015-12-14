@@ -13,3 +13,4 @@ paginate = 100
 
 [taxonomies]
   mode = "mode"
+  tag = "tags"
