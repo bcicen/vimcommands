@@ -6,26 +6,44 @@
   <div class="post">
     <div class="post content">
       {{ .Content }}
-      <form class="submit">
+      <form>
         <input id="submitcmd" type="text" name="cmd" maxlength="30"></input>
         <br>
-        <div id="mode" class="mode focused-mode" data="normal"> Normal Mode</div>
-        <div id="mode" class="mode" data="command">Command Line Mode</div>
-        <div id="mode" class="mode" data="visual">Visual Mode</div>
+        <div class="mode-select">
+        <div id="mode-btn" class="select-btn" data="normal">Normal Mode</div>
+        <div id="mode-btn" class="select-btn" data="command">Command-Line Mode</div>
+        <div id="mode-btn" class="select-btn" data="visual">Visual Mode</div>
+        </div>
         <br>
-        <input type="submit" value="Submit">
+        Tag Category:
+        <div class="tag-select">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <div id="tag-btn" class="select-btn" data="{{ $name }}">{{ $name }}</div>
+        {{ end }}
+        </div>
+        <br>
+        <input type="submit" class="select-btn submit-btn" value="Submit">
       </form>
     </div>
     <!-- END CONTENT -->
   </div>
   <script type='text/javascript'>
-  $(document.body).on("click","#mode",function(){
-    localStorage.setItem('mode', $(this).attr("data"));
-    $(".submit").children().removeClass("focused-mode");
-    $(this).toggleClass("focused-mode");
-  });
-  $('form').submit(function() {
-    console.log(localStorage.getItem('mode'));
+  $(document).ready(function() {
+    $(document.body).on("click","#mode-btn",function(){
+      localStorage.setItem('mode', $(this).attr("data"));
+      $(".mode-select").children().removeClass("select-btn-focused");
+      $(this).toggleClass("select-btn-focused");
+    });
+    $(document.body).on("click","#tag-btn",function(){
+      localStorage.setItem('tag', $(this).attr("data"));
+      $(".tag-select").children().removeClass("select-btn-focused");
+      $(this).toggleClass("select-btn-focused");
+    });
+    $('form').submit(function() {
+      console.log(localStorage.getItem('mode'));
+    });
+    $(".mode-select").children().first().toggleClass("select-btn-focused");
+    $(".tag-select").children().first().toggleClass("select-btn-focused");
   });
   </script>
 </div>
