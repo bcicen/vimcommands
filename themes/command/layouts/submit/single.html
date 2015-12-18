@@ -7,7 +7,7 @@
     <div class="post content">
       {{ .Content }}
       <form>
-        <input id="submitcmd" type="text" name="cmd" maxlength="30"></input>
+        <input id="submit-cmd" type="text" name="cmd" maxlength="30"></input>
         <br>
         <div class="mode-select">
         <div id="mode-btn" class="select-btn" data="normal">Normal Mode</div>
@@ -22,7 +22,7 @@
         {{ end }}
         </div>
         <br>
-        <input type="submit" class="select-btn submit-btn" value="Submit">
+        <div id="submit-btn" class="select-btn submit-btn">submit</div>
       </form>
     </div>
     <!-- END CONTENT -->
@@ -39,11 +39,25 @@
       $(".tag-select").children().removeClass("select-btn-focused");
       $(this).toggleClass("select-btn-focused");
     });
-    $('form').submit(function() {
-      console.log(localStorage.getItem('mode'));
+    $(document.body).on("click","#submit-btn",function(){
+      if( !$("#submit-cmd").val() ) {
+        $("#submit-cmd").addClass("input-fail");
+      } else {
+        $("#submit-cmd").removeClass("input-fail");
+        var c = {};
+        c["cmd"] = $("#submit-cmd").val();
+        c["tag"] = localStorage.getItem('tag');
+        c["mode"] = localStorage.getItem('mode');
+        console.log(JSON.stringify(c));
+        $(".content").replaceWith("Thanks! New commands should be visible on the site within 24 hours");
+      }
     });
-    $(".mode-select").children().first().toggleClass("select-btn-focused");
-    $(".tag-select").children().first().toggleClass("select-btn-focused");
+    var firstmode = $(".mode-select").children().first();
+    var firsttag = $(".tag-select").children().first();
+    firstmode.toggleClass("select-btn-focused");
+    firsttag.toggleClass("select-btn-focused");
+    localStorage.setItem("mode", firstmode.attr("data"));
+    localStorage.setItem("tag", firsttag.attr("data"));
   });
   </script>
 </div>

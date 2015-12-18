@@ -209,13 +209,18 @@ form {
   margin: auto;
 }
 
-#submitcmd {
+input[type=text] {
   height: 2em;
   width:  100%;
   max-width: 15em;
   font-size: 1.5em;
   text-align: center;
   border: 1px solid #797979;
+}
+
+.input-fail {
+  border: 2px solid #A30000 !important;
+  background-color: #FFE6E6 !important;
 }
 
 .select-btn {
@@ -249,10 +254,10 @@ form {
 }
 
 .submit-btn {
-  height: 1.5em;
+  width: 5em;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid #9B9B9B;
   font-size: 1em;
-  color: #3F3F3F;
-  margin-top: 20px;
-  text-transform: lowercase;
-  font-family: 'Source Sans Pro', serif;
+  font-weight: 500;
 }
