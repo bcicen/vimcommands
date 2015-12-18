@@ -59,3 +59,15 @@
 .tags a {
   font-size: 0.8em;
 }
+
+input[type=text] {
+  max-width: 90%;
+}
+
+.select-btn {
+	margin: 2px;
+}
+
+#mode-btn, #tag-btn {
+  display: block;
+}
