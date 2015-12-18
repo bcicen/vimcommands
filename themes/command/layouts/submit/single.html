@@ -1,0 +1,37 @@
+{{ $baseurl := .Site.BaseURL }}
+
+{{ partial "header.html" . }}
+<div class="posts">
+  <!-- CONTENT -->
+  <div class="post">
+    <div class="post content">
+      {{ .Content }}
+      <form class="submit">
+        <input id="submitcmd" type="text" name="cmd" maxlength="30"></input>
+        <br>
+        <div id="mode" class="mode focused-mode" data="normal"> Normal Mode</div>
+        <div id="mode" class="mode" data="command">Command Line Mode</div>
+        <div id="mode" class="mode" data="visual">Visual Mode</div>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <!-- END CONTENT -->
+  </div>
+  <script type='text/javascript'>
+  $(document.body).on("click","#mode",function(){
+    localStorage.setItem('mode', $(this).attr("data"));
+    $(".submit").children().removeClass("focused-mode");
+    $(this).toggleClass("focused-mode");
+  });
+  $('form').submit(function() {
+    console.log(localStorage.getItem('mode'));
+  });
+  </script>
+</div>
+<div class="push"></div>
+</div>
+</div>
+{{ partial "footer.html" }}
+</div>
+</div>

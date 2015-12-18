@@ -207,3 +207,28 @@ p {
   font-size: 3em;
   padding-left,padding-right: 10px;
 }
+
+.submit {
+  line-height: normal;
+}
+
+#submitcmd {
+  height: 2em;
+  width:  15em;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+#mode {
+  display: inline-block;
+  padding: 10px;
+}
+
+.mode {
+  background-color: #eee;
+}
+
+.focused-mode {
+  background-color: #ff9494;
+}
