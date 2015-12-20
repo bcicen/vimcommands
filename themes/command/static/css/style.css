@@ -1,6 +1,7 @@
 html,body {
   height: 100%;
   font-size: 20px; 
+  font-family: 'Source Sans Pro', serif;
 }
 
 .navbar .nav {
@@ -15,7 +16,6 @@ float: right; }
   line-height: normal;
   font-size: 1em;
   text-transform: uppercase;
-  font-family: 'Source Sans Pro', serif;
   text-align: center;
   width: 100%;
 }
@@ -25,7 +25,6 @@ float: right; }
 }
 
 .command {
-  font-family: 'Source Sans Pro', serif;
   color: #3F3F3F;
   font-size: 3.0em;
   line-height: 0.8em;
@@ -34,7 +33,6 @@ float: right; }
 }
 
 .posts h1,h2 {
-  font-family: 'Source Sans Pro', serif;
   color: #3F3F3F;
   text-align: center; 
   margin-bottom: 20px;
@@ -133,7 +131,6 @@ p {
   text-align: center;
   margin-top: 1em;
   margin-bottom: 2em;
-  font-family: "Source Sans Pro", "Palatino Linotype", Georgia, serif;
   font-size: 1.5em;
 }
 
@@ -171,7 +168,6 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
-  font-family: 'Source Sans Pro', Helvetica, 'Helvetica Neue', sans-serif;
   border-bottom: 3px solid #fff;
 }
 
@@ -206,4 +202,81 @@ p {
 .pagenumber {
   font-size: 3em;
   padding-left,padding-right: 10px;
+}
+
+form {
+  line-height: normal;
+  margin: auto;
+}
+
+input[type=text] {
+  height: 1.7em;
+  width:  100%;
+  max-width: 15em;
+	margin-bottom: .5em;
+	color: #B7B7B7;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid #797979;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  width: 20em;
+	padding: 15px;
+	color: #B7B7B7;
+  font-size: 1em;
+  text-align: center;
+  line-height: normal;
+	vertical-align: middle;
+  border: 1px solid #797979;
+}
+
+.desc-input {
+	height: 100%;
+}
+
+.input-fail {
+  border: 2px solid #A30000 !important;
+  background-color: #FFE6E6 !important;
+}
+
+.select-btn {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.select-btn:hover {
+  cursor: pointer;
+}
+
+.select-btn-focused {
+  background-color: #ff9494;
+}
+
+#mode-btn {
+  display: inline-block;
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+#tag-btn {
+  display: inline-block;
+  padding: 10px;
+  font-size: 0.6em;
+}
+
+.tag-select {
+  margin: auto;
+  max-width: 25em;
+}
+
+.submit-btn {
+  width: 5em;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid #9B9B9B;
+  font-size: 1em;
+  font-weight: 500;
 }
