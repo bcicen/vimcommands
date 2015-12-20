@@ -64,8 +64,16 @@ input[type=text] {
   max-width: 90%;
 }
 
+textarea {
+  max-width: 90%;
+}
+
 .select-btn {
 	margin: 2px;
+}
+
+.submit-btn {
+	margin: auto;
 }
 
 #mode-btn, #tag-btn {
