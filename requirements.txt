@@ -1,0 +1,4 @@
+Flask==0.10.1
+Flask-RESTful==0.3.4
+gevent==1.1b1
+PyYAML==3.11
