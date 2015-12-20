@@ -15,7 +15,7 @@ def make_post(cmd, desc, mode, tag):
         return False
 
     meta = { 'title': cmd,
-             'date': datetime.utcnow(),
+             'date': str(datetime.utcnow()).replace(' ', 'T'),
              'Tags': [tag],
              'Mode': mode }
 
@@ -24,7 +24,7 @@ def make_post(cmd, desc, mode, tag):
     for c1,c2 in replace_chars.items():
         filename = filename.replace(c1,c2)
 
-    print("dumping post to %s:\n%s" % (filename,meta))
+    print("dumping post to %s:\n%s\n%s" % (filename,meta,desc))
     with open(filename, 'a') as of:
         of.write('---\n')
         of.write(yaml.dump(meta))
