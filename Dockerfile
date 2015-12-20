@@ -1,6 +1,6 @@
 from alpine:3.2
 
-RUN apk add --update python3 python3-dev musl musl-dev && \
+RUN apk add --update python3 python3-dev gcc musl musl-dev && \
     rm -f /var/cache/apk/*
 
 COPY . /app/
