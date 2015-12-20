@@ -19,15 +19,17 @@ def make_post(cmd, desc, mode, tag):
              'Tags': [tag],
              'Mode': mode }
 
-    y = yaml.dump_all([ meta, desc ])
-    filename = cmd
+    filename = cmd + '.md'
 
     for c1,c2 in replace_chars.items():
         filename = filename.replace(c1,c2)
 
-    print("dumping post to %s:\n%s" % (filename,y))
+    print("dumping post to %s:\n%s" % (filename,meta))
     with open(filename, 'a') as of:
-        of.write(y)
+        of.write('---\n')
+        of.write(yaml.dump(meta))
+        of.write('---\n')
+        of.write(yaml.dump(desc))
 
 class Version(Resource):
     def get(self):
