@@ -31,8 +31,7 @@
   width: 227px;
   height: 61px;
   background-size: 227px 61px;
-  margin: auto;
-  margin-left: 20px;
+  margin: -10px auto 0px auto;
 }
 
 .fa {
@@ -45,7 +44,7 @@
 }
 
 .posts {
-  padding-top: 20%;
+  padding-top: 25%;
 }
 
 .post {
