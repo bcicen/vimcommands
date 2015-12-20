@@ -1,11 +1,13 @@
 import os
 import yaml
+import unicodedata
 from datetime import datetime
 from gevent.wsgi import WSGIServer
 from flask import Flask, request, render_template, make_response
 from flask_restful import Resource, Api, reqparse, request, abort
 
 version = '0.1'
+validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
 
 def make_post(cmd, desc, mode, tag):
     if len(desc) > 80:
@@ -17,7 +19,14 @@ def make_post(cmd, desc, mode, tag):
              'Tags': [tag],
              'Mode': mode }
 
-    return [ meta, desc ]
+    y = yaml.dump_all([ meta, desc ])
+
+    cleaned = unicodedata.normalize('NFKD', cmd).encode('ASCII', 'ignore')
+    filename = ''.join(c for c in cleaned if c in validFilenameChars) + '.md'
+
+    print("dumping post to %s:\n%s" (filename,y))
+    with open(filename, 'a') as of:
+        of.write(y)
 
 class Version(Resource):
     def get(self):
@@ -26,11 +35,7 @@ class Version(Resource):
 class SubmitCommand(Resource):
     def post(self):
         args = self._parse()
-
-        post = make_post(args['cmd'], args['desc'], args['mode'], args['tag'])
-        print(yaml.dump_all(post))
-        #if not ok:
-        #return make_error(400, result)
+        make_post(args['cmd'], args['desc'], args['mode'], args['tag'])
 
         return {'ok': True}, 200
 
