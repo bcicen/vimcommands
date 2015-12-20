@@ -210,12 +210,31 @@ form {
 }
 
 input[type=text] {
-  height: 2em;
+  height: 1.7em;
   width:  100%;
   max-width: 15em;
+	margin-bottom: .5em;
+	color: #B7B7B7;
   font-size: 1.5em;
   text-align: center;
   border: 1px solid #797979;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  width: 20em;
+	padding: 15px;
+	color: #B7B7B7;
+  font-size: 1em;
+  text-align: center;
+  line-height: normal;
+	vertical-align: middle;
+  border: 1px solid #797979;
+}
+
+.desc-input {
+	height: 100%;
 }
 
 .input-fail {

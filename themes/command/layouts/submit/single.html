@@ -7,59 +7,78 @@
     <div class="post content">
       {{ .Content }}
       <form>
-        <input id="submit-cmd" type="text" name="cmd" maxlength="30"></input>
+        <input id="cmd-input" type="text" name="cmd" value="command" onclick='this.value="";this.style.color="#555"' maxlength="30"></input>
         <br>
+        <textarea id="desc-input" rows="2" name="description" maxlength="80" onclick='this.value="";this.style.color="#555"'>description</textarea>
+        <br><br>
         <div class="mode-select">
-        <div id="mode-btn" class="select-btn" data="normal">Normal Mode</div>
-        <div id="mode-btn" class="select-btn" data="command">Command-Line Mode</div>
-        <div id="mode-btn" class="select-btn" data="visual">Visual Mode</div>
+          <div id="mode-btn" class="select-btn" data="normal">Normal Mode</div>
+          <div id="mode-btn" class="select-btn" data="command">Command-Line Mode</div>
+          <div id="mode-btn" class="select-btn" data="visual">Visual Mode</div>
         </div>
         <br>
         Tag Category:
         <div class="tag-select">
-        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-        <div id="tag-btn" class="select-btn" data="{{ $name }}">{{ $name }}</div>
-        {{ end }}
+          {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+          <div id="tag-btn" class="select-btn" data="{{ $name }}">{{ $name }}</div>
+          {{ end }}
         </div>
         <br>
         <div id="submit-btn" class="select-btn submit-btn">submit</div>
+        <div id="error-box"> </div> 
         <br><hr>
       </form>
     </div>
     <!-- END CONTENT -->
   </div>
   <script type='text/javascript'>
-  $(document).ready(function() {
-    $(document.body).on("click","#mode-btn",function(){
-      localStorage.setItem('mode', $(this).attr("data"));
-      $(".mode-select").children().removeClass("select-btn-focused");
-      $(this).toggleClass("select-btn-focused");
-    });
-    $(document.body).on("click","#tag-btn",function(){
-      localStorage.setItem('tag', $(this).attr("data"));
-      $(".tag-select").children().removeClass("select-btn-focused");
-      $(this).toggleClass("select-btn-focused");
-    });
-    $(document.body).on("click","#submit-btn",function(){
-      if( !$("#submit-cmd").val() ) {
-        $("#submit-cmd").addClass("input-fail");
-      } else {
-        $("#submit-cmd").removeClass("input-fail");
-        var c = {};
-        c["cmd"] = $("#submit-cmd").val();
-        c["tag"] = localStorage.getItem('tag');
-        c["mode"] = localStorage.getItem('mode');
-        console.log(JSON.stringify(c));
-        $(".content").replaceWith("Thanks! New commands should be visible on the site within 24 hours");
-      }
-    });
-    var firstmode = $(".mode-select").children().first();
-    var firsttag = $(".tag-select").children().first();
-    firstmode.toggleClass("select-btn-focused");
-    firsttag.toggleClass("select-btn-focused");
-    localStorage.setItem("mode", firstmode.attr("data"));
-    localStorage.setItem("tag", firsttag.attr("data"));
+$(document).ready(function() {
+
+  $(document.body).on("click","#mode-btn",function(){
+    localStorage.setItem('mode', $(this).attr("data"));
+    $(".mode-select").children().removeClass("select-btn-focused");
+    $(this).toggleClass("select-btn-focused");
   });
+
+  $(document.body).on("click","#tag-btn",function(){
+    localStorage.setItem('tag', $(this).attr("data"));
+    $(".tag-select").children().removeClass("select-btn-focused");
+    $(this).toggleClass("select-btn-focused");
+  });
+
+  $(document.body).on("click","#submit-btn",function(){
+    if( !$("#cmd-input").val() ) {
+      $("#cmd-input").addClass("input-fail");
+    } else if( $("#cmd-input").val() == "command" ) {
+      $("#cmd-input").addClass("input-fail");
+    } else if( !$("#desc-input").val() ) {
+      $("#desc-input").addClass("input-fail");
+    } else if( $("#desc-input").val() == "description" ) {
+      $("#desc-input").addClass("input-fail");
+    } else {
+      $("#cmd-input").removeClass("input-fail");
+      $("#desc-input").removeClass("input-fail");
+      var c = {};
+      var url = "http://localhost:8000/submit"; 
+      c["cmd"] = $("#cmd-input").val();
+      c["desc"] = $("#desc-input").val();
+      c["tag"] = localStorage.getItem('tag');
+      c["mode"] = localStorage.getItem('mode');
+      console.log(JSON.stringify(c));
+      $.post(url, c, function(data) {
+        console.log(data.ok);
+      });
+      $(".content").replaceWith("Thanks! New commands should be visible on the site within 24 hours");
+    }
+  });
+
+  var firstmode = $(".mode-select").children().first();
+  var firsttag = $(".tag-select").children().first();
+  firstmode.toggleClass("select-btn-focused");
+  firsttag.toggleClass("select-btn-focused");
+  localStorage.setItem("mode", firstmode.attr("data"));
+  localStorage.setItem("tag", firsttag.attr("data"));
+});
   </script>
 </div>
 <div class="push"></div>
