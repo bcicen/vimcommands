@@ -50,20 +50,21 @@ float: right; }
 .logo {
   width: 370px;
   height: 100px;
-  margin-left: 92px;
-  display: inline-block;
+  margin: -20px auto 0px auto;
+	display: block;
   background-image: url("../images/logo.png");
 }
 
 #navbar-inner {
-  display: block;
   text-align: center;
   min-height: 40px;
   background-color: white;
-  margin: auto;
-  max-width: 1600px;
-  padding-top: 10px;
   border-bottom: 1px solid #989898;
+}
+
+#navlinks {
+  padding-top: 10px;
+  background-color: white;
 }
 
 .navlink {
