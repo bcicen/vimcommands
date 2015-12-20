@@ -1,14 +1,12 @@
 import os
 import yaml
-import string
-import unicodedata
 from datetime import datetime
 from gevent.wsgi import WSGIServer
 from flask import Flask, request, render_template, make_response
 from flask_restful import Resource, Api, reqparse, request, abort
 
 version = '0.1'
-validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
+replace_chars = { '/' : '-slash-' }
 
 def make_post(cmd, desc, mode, tag):
     if len(desc) > 80:
@@ -21,9 +19,10 @@ def make_post(cmd, desc, mode, tag):
              'Mode': mode }
 
     y = yaml.dump_all([ meta, desc ])
+    filename = cmd
 
-    cleaned = unicodedata.normalize('NFKD', cmd).encode('ASCII', 'ignore')
-    filename = ''.join(c for c in cleaned if c in validFilenameChars) + '.md'
+    for c1,c2 in replace_chars.items():
+        filename = filename.replace(c1,c2)
 
     print("dumping post to %s:\n%s" (filename,y))
     with open(filename, 'a') as of:
