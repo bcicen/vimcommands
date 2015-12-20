@@ -59,7 +59,7 @@ $(document).ready(function() {
       $("#cmd-input").removeClass("input-fail");
       $("#desc-input").removeClass("input-fail");
       var c = {};
-      var url = "http://localhost:8000/submit"; 
+      var url = "http://api.vimcommands.com/submit"; 
       c["cmd"] = $("#cmd-input").val();
       c["desc"] = $("#desc-input").val();
       c["tag"] = localStorage.getItem('tag');
