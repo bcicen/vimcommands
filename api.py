@@ -6,7 +6,8 @@ from flask import Flask, request, render_template, make_response
 from flask_restful import Resource, Api, reqparse, request, abort
 
 version = '0.1'
-replace_chars = { '/' : '-slash-' }
+replace_chars = { '/' : '-slash-',
+                  ':' : 'col-'}
 
 def make_post(cmd, desc, mode, tag):
     if len(desc) > 80:
@@ -24,7 +25,7 @@ def make_post(cmd, desc, mode, tag):
     for c1,c2 in replace_chars.items():
         filename = filename.replace(c1,c2)
 
-    print("dumping post to %s:\n%s" (filename,y))
+    print("dumping post to %s:\n%s" % (filename,y))
     with open(filename, 'a') as of:
         of.write(y)
 
